@@ -36,5 +36,10 @@ RUN conda install --quiet --yes \
     'r-xml=3.98_1.5' \
     'r-crayon=1.3*' && conda clean -tipsy
 
+RUN echo "source('http://bioconductor.org/biocLite.R'); biocLite(c('GEOquery','limma','RColorBrewer','plotly','gplots','cluster','dendextend','factoextra','ComplexHeatmap','samr','impute','perm','siggenes'))" | R --vanilla
+
+
+	
+	
 WORKDIR /home/jovyan
 ADD . /home/jovyan
